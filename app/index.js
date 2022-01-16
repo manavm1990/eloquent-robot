@@ -1,1 +1,6 @@
-export const add2Nums = (num1, num2) => num1 + num2;
+import roads from "./roads.js";
+import { buildGraph } from "./utils.js";
+
+export function createWorld() {
+  return buildGraph(roads);
+}
