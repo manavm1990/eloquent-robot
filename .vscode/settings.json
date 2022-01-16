@@ -19,5 +19,6 @@
   "files.trimTrailingWhitespace": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.validate.enable": false,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "cSpell.words": ["Daria's", "Grete's"]
 }
