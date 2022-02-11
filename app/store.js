@@ -25,7 +25,7 @@ export class Store {
         .map((parcel) =>
           // Is the parcel coming from that previous location?
           parcel.location === this.location
-            ? // If so, update the parcel to be at the new location
+            ? // If so, update the parcel to be at the new location.
               {
                 ...parcel,
                 location: destination,
@@ -33,7 +33,7 @@ export class Store {
             : parcel
         )
 
-        // Drop off parcels
+        // Drop off parcels that belong here
         .filter((parcel) => parcel.address !== destination)
     );
   }
