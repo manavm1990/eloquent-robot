@@ -1,8 +1,9 @@
-import { createWorld } from "./index.js";
-import { Store } from "./store.js";
+import roads from "./roads.js";
+import { Robot } from "./Robot.js";
+import { buildGraph } from "./utils.js";
 
 it("should create a correct graph", () => {
-  expect(createWorld()).toEqual({
+  expect(buildGraph(roads)).toEqual({
     "Alice's House": ["Bob's House", "Cabin", "Post Office"],
     "Bob's House": ["Alice's House", "Town Hall"],
     Cabin: ["Alice's House"],
@@ -17,13 +18,13 @@ it("should create a correct graph", () => {
   });
 });
 
-it("update state to reflect moving a 📦 from the 🏣 and deliver to Alice's 🏠", () => {
-  const initialState = new Store("Post Office", [
+it("updates the 🤖 to reflect moving a 📦 from the 🏣 and deliver to Alice's 🏠", () => {
+  const robot = new Robot("Post Office", [
     { place: "Post Office", address: "Alice's House" },
   ]);
-  const finalState = initialState.move("Alice's House");
+  const updatedRobot = robot.move("Alice's House");
 
-  expect(finalState).toEqual({
+  expect(updatedRobot).toEqual({
     location: "Alice's House",
     parcels: [],
   });

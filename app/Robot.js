@@ -3,7 +3,7 @@ import { buildGraph } from "./utils.js";
 
 const roadGraph = buildGraph(roads);
 
-export class Store {
+export class Robot {
   constructor(
     robotLocation = "Post Office",
     villageParcels = [{ location: "Post Office", address: "Alice's House" }]
@@ -18,7 +18,7 @@ export class Store {
       return this;
     }
 
-    return new Store(
+    return new Robot(
       // Move 🤖 to new location
       destination,
       this.parcels
