@@ -1,7 +1,4 @@
-import roads from "./roads.js";
-import { buildGraph } from "./utils.js";
-
-const roadGraph = buildGraph(roads);
+import { roadGraph } from "./lib.js";
 
 export class Robot {
   constructor(
